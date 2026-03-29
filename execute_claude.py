@@ -326,8 +326,11 @@ async def execute_claude(user_id: str, chat_id: str, prompt: str, resume_session
                     previous_response=result_text  # 保存 Claude 的回复作为上下文
                 )
 
-                # 在结果末尾添加提示
-                result_text += "\n\n💡 请回复选项编号（如 1、2、3）来选择"
+                # 先发 Claude 的回复文字，再发带按钮的交互卡片
+                send_card(chat_id, "💬 Claude", result_text, "blue")
+                send_interactive_question(chat_id, question_data)
+                notifier.notify_completed()
+                return  # 不再走下面的普通结果发送
 
         # 如果是恢复会话，也要更新 session_id（保持会话活跃）
         elif resume_session_id and current_session_id:
