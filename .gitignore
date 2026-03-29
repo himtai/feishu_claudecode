@@ -1,0 +1,10 @@
+.env
+*.log
+__pycache__/
+*.pyc
+.omc/
+.claude_config/
+downloads/
+workspace/
+.sessions/
+isolate-*.log
