@@ -27,6 +27,25 @@
 | ✅ | 完成 |
 | ❌ | 出错 |
 
+## 前提条件
+
+本项目基于 [Claude Code](https://claude.ai/code) 运行，部署前需确保：
+
+1. **安装 Claude Code CLI**
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+2. **登录 Claude Code**
+   ```bash
+   claude
+   ```
+   按提示完成登录，确保 `claude` 命令可正常使用。
+
+3. **Python 3.8+**
+
+> 飞书机器人在收到消息时会以子进程方式启动 Claude Agent，与你在终端中直接使用的 Claude Code 相互独立，共用同一套安装和 API 配额。
+
 ## 快速开始
 
 ### 1. 安装依赖
