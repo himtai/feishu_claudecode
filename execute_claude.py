@@ -276,6 +276,10 @@ async def execute_claude(user_id: str, chat_id: str, prompt: str, resume_session
             elif msg_type == 'ResultMessage':
                 if hasattr(message, 'result') and message.result:
                     result_text = message.result
+                if hasattr(message, 'usage') and message.usage:
+                    input_tokens = message.usage.get('input_tokens', 0)
+                    output_tokens = message.usage.get('output_tokens', 0)
+                    notifier.update_token_usage(input_tokens, output_tokens)
 
         # 如果没有收到响应，发送默认消息
         if not got_response or not result_text:

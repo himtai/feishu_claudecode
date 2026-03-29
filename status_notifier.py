@@ -50,7 +50,8 @@ class StatusNotifier:
                 stats += f" | 🔧 {self.tool_count} 次工具调用"
             if self.token_usage["input"] > 0 or self.token_usage["output"] > 0:
                 total_tokens = self.token_usage["input"] + self.token_usage["output"]
-                stats += f" | 🎯 {total_tokens:,} tokens"
+                context_pct = round(self.token_usage["input"] / 200000 * 100, 1)
+                stats += f" | 🎯 {total_tokens:,} tokens | 📊 上下文 {context_pct}%"
 
             # 构建分区内容
             elements = []
@@ -148,7 +149,8 @@ class StatusNotifier:
                 stats += f" | 🔧 {self.tool_count} 次工具调用"
             if self.token_usage["input"] > 0 or self.token_usage["output"] > 0:
                 total_tokens = self.token_usage["input"] + self.token_usage["output"]
-                stats += f" | 🎯 {total_tokens:,} tokens"
+                context_pct = round(self.token_usage["input"] / 200000 * 100, 1)
+                stats += f" | 🎯 {total_tokens:,} tokens | 📊 上下文 {context_pct}%"
 
             # 构建分区内容
             elements = []
