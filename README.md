@@ -54,9 +54,17 @@ PROJECT_ROOT=/path/to/your/workspace
 
 ### 3. 飞书应用配置
 
+**开发配置 → 事件与回调：**
 - 开启**长连接**模式（无需公网 IP）
 - 订阅事件：`im.message.receive_v1`
-- 权限：消息发送、消息表情回应、富文本卡片
+
+**开发配置 → 回调配置：**
+- 添加**卡片回传交互**（用于按钮点击回调）
+
+**权限管理：**
+- `im:message`（消息发送）
+- `im:message.reaction`（消息表情回应）
+- `im:message:send_as_bot`（机器人发送消息）
 
 ### 4. 启动服务
 
