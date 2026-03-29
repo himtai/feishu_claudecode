@@ -1,6 +1,6 @@
 # 飞书 Claude Agent
 
-在飞书中使用完整的 Claude Code 能力，通过 WebSocket 长连接接收消息，无需公网 IP。
+在飞书中使用完整的 Claude Code 能力，通过 WebSocket 长连接接收消息，无需公网 IP。利用飞书卡片特性动态展示执行过程和输出结果。
 
 ## 演示
 
